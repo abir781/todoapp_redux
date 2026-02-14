@@ -12,9 +12,12 @@ const todoslice= createSlice({
         },
         addtodo: (state,action)=>{
             state.arr.push(action.payload)
+        },
+        deletetodo: (state,action)=>{
+            state.arr=state.arr.filter((a)=>a!==action.payload)
         }
     }
 })
 
-export const {addtodo,settext}=todoslice.actions
+export const {addtodo,settext,deletetodo}=todoslice.actions
 export default todoslice.reducer
